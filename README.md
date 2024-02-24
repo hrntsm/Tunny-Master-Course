@@ -129,7 +129,7 @@ Tunny は仕組み上、必ず結果を保存しないといけません。
 最適化結果は、上記の外部のファイルに保存する以外に、Grasshopper内に保存することもできます。
 Fish コンポーネントはInternalizeに対応しているため、結果のみを保存したい場合はこちらのほうが便利です。
 
-
+<img width="675" alt="Screenshot 2024-02-24 at 20 39 33" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/2dd753fc-1717-4cce-83fb-bbed6c65e716">
 
 ### カテゴリカルな最適化への対応
 
