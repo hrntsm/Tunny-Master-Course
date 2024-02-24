@@ -1,5 +1,9 @@
 # SHIMZ-AECTech_Tunny-Master-Course
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/hrntsm/Tunny-docs/main/static/home-og.png" />
+</p>
+
 ## 開発経緯
 
 なぜいまさら日本で新しい最適化の Grasshopper コンポーネントを作成するのか。
