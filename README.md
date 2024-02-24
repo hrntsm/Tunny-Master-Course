@@ -62,16 +62,20 @@ Tunny は非常に多くの最適化手法をサポートしています。
 
 Tunny で採用しているのは以下の手法です。
 
+1. ベイズ最適化
+   1. TPE
+   2. GP
 1. 進化アルゴリズム
    1. NSGA-II
    2. NSGA-III
    3. CMA-ES
-2. ベイズ最適化
-   1. TPE
-   2. GP
-3. 乱数
+1. 乱数
+   1. QMC（準モンテカルロ）
    1. ランダム
-   2. QMC（準モンテカルロ）
+
+これらはTunnyのUIからどの手法を採用するか選択することができます。
+
+<img width="291" alt="Screenshot 2024-02-24 at 15 46 23" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/68ecebad-d18f-48fd-bab8-c613180701ff">
 
 ### 制約条件の対応
 
