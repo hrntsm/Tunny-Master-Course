@@ -113,10 +113,16 @@ Tunnyは仕組み上、必ず結果を保存しないといけません。
   1. Galapagos
   2. Tunny（永続化あり）
   3. Tunny（インメモリー）
+ 
+インメモリー機能は以下の InMemory にチェックをいれることで有効化されます。
+
+<img width="288" alt="Screenshot 2024-02-24 at 17 25 23" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/cff43f79-4d48-48eb-8afa-ed1e03c4ea3f">
 
 最適化結果は、リレーショナルデータベースであるSQLite形式（.sqlite, .db）か、テキストで保存されるジャーナル形式（.log）で保存することができます。
 どの保存形式でどこに保存するかは以下で設定することができます。
 ジャーナル形式を推奨しています。
+
+<img width="292" alt="Screenshot 2024-02-24 at 17 24 53" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/4f7f9391-f232-4a32-8aee-73bf98cdc528">
 
 
 なお、後で説明するHuman in the loop モードは現状ではSQLite形式でしか動きませんが、次のバージョンからジャーナル形式で保存できるようになります。
