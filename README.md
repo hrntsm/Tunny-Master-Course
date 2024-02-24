@@ -85,6 +85,7 @@ Constraint Fish Attribute コンポーネントの 「Constraint」の入力に�
 リストでの入力に対応しています。
 ここに入力されている値の全てが0以下の場合、その試行は制約条件を満たす試行だと判断されます。
 
+<img width="672" alt="Screenshot 2024-02-24 at 15 43 02" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/2792c746-5ed2-4915-a236-1be8505dcbf2">
 
 ### 最適化の永続化
 
