@@ -206,6 +206,13 @@ Tunny は上記の結果の図を以下の 2 つの方法で保存すること�
 - png
 - html
 
+これらの結果は Dashboard でも確認することができます。
+Dashboard は Tunny の UI だけでなく Grasshopper のツールバーからも開くことができます。
+
+|  |  |
+|---|---|
+|<img width="500" alt="Screenshot 2024-02-25 at 14 34 06" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/8533b74e-8b94-427d-97f6-df568c0dd7f3">| <img width="500" alt="Screenshot 2024-02-25 at 14 34 45" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/ce0edeb2-07d2-47ed-9ac8-dc1fe7e4b55b"> |
+
 #### 感度を確認するときの注意点
 
 #### aaa
