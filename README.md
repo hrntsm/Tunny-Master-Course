@@ -157,6 +157,8 @@ Fish コンポーネントは Internalize に対応しているため、結果�
 
 そのため Tunny ではカテゴリーを用いた最適化に対応しています。
 
+<img width="783" alt="Screenshot 2024-02-25 at 13 39 57" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/8ab589f0-fcec-4d16-b0e3-9b7b2e86834f">
+
 ### 高度な結果分析機能
 
 Tunny は高度な結果分析を行うことができます。
