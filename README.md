@@ -156,8 +156,8 @@ Population Size が世代に含まれる個体数になります。
 つまり Number of Trials / Population Size が世代数になります。
 
 |試行回数の設定|個体数の設定|
-|---|---
-|||
+|---|---|
+|<img width="283" alt="Screenshot 2024-02-25 at 22 09 38" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/3d048a05-6682-4b3f-a6a6-bd7beb97d044">|<img width="287" alt="Screenshot 2024-02-25 at 22 09 18" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/8071894c-1ba8-428d-a537-7cd0fd8d354b">|
 
 より各手法について知りたい場合は、optunaの本を読まれることを推奨します。
 
