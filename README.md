@@ -187,7 +187,7 @@ Constraint Fish Attribute コンポーネントの 「Constraint」の入力に�
 
 サンプルファイルは以下です。
 
-- optimization_with_constraint.ghß
+- optimization_with_constraint.gh
 
 ### 最適化の永続化
 
