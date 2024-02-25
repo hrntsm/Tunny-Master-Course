@@ -112,12 +112,12 @@ Rosenbrock function はただの式なので計算は一瞬です。
 
 |               | 変数 3 | 変数 10 |
 | ------------- | ------ | ------- |
-| 試行回数 126  |        |         |
-| 最小値        |        |         |
-| 計算時間      |        |         |
+| 試行回数 126  |||
+| 最小値        |<img width="362" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/4215c0d2-8493-4968-853c-b54de73980e6">|<img width="362" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/11bda4e1-85a5-4c9b-86bc-70fdbe0032b5">|
+| 計算時間      |<img width="361" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/bcab8b97-2e97-4872-b109-b25addecf429">|<img width="361" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/d296953a-ca63-41d4-9a99-51e9bd5b7a29">|
 | 試行回数 1024 |        |         |
-| 最小値        |        |         |
-| 計算時間      |        |         |
+| 最小値        |<img width="362" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/f05bb1cb-09c6-4cfc-8587-18a52278c85e">|         |
+| 計算時間      |<img width="361" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/8d790e7d-7c52-4ecf-9cef-0dfb6a7d4965">|         |
 
 ### 制約条件の対応
 
