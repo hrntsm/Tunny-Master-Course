@@ -106,6 +106,9 @@ Constraint Fish Attribute コンポーネントの 「Constraint」の入力に�
 Tunny は最適化の永続化を行うことができます。
 つまり、Grasshopper とは独立したファイルとして最適化結果を保存して、一度最適化を止めたあと、再開することができます。
 
+最近では会社の業務管理の都合で、業務時間外は PC の電源をつけていられないという話も聞きます。
+通常の最適化では、業務時間内に最適化を完了させないといけませんが、Tunny の場合は最適化を再開できるため、この問題を解決できます。
+
 一方でそのせいで、1 試行毎に結果を保存する処理が入ります。
 そのせいで他の最適化コンポーネントより遅いので、その点は留意してください。
 
@@ -181,7 +184,7 @@ Tunny は高度な結果分析を行うことができます。
 1. スライス図
 1. 重要度図
    - これらの指標を見ることでどの変数にどの程度の感度があるかを確認することができます。
-   - 一般的にどんな最適化で変数がたくさんあっても重要な変数は数個程度だと言うことが知られています。
+   - 一般的に最適化で変数がたくさんあっても重要な変数は数個程度だと言うことが知られています。
      - https://proceedings.mlr.press/v32/hutter14.html
    - なおこういった感度を可視化するツールを使うときは最適化ではなくランダムや QMC を使いましょう。
 1. 最適化ヒストリー図
@@ -218,23 +221,25 @@ Dashboard はプロットされた点をダブルクリックするとその点�
 #### 感度を確認するときの注意点
 
 以下は同じ試行回数を行った場合の、コンター図です。
-前半3つは最適値周りはよくサンプリングされていますが、それ以外の点が少なくうまくコンターが作成できていないことがわかります。
-後半の2つは最適化の手法ではなく全体を確認するための手法のため、きれいなコンターが描けています。
+前半 3 つは最適値周りはよくサンプリングされていますが、それ以外の点が少なくうまくコンターが作成できていないことがわかります。
+後半の 2 つは最適化の手法ではなく全体を確認するための手法のため、きれいなコンターが描けています。
 
-感度を可視化するツールはきれいに点が取れていることが前提になります。
-最適化を行ってしまうと、最適値付近の情報しかえられないので注意してください。
+感度を可視化するツールは便利ですが、きれいに点が取れていることが前提になります。
+最適化を行ってしまうと、偏った情報しかえられず間違った判断になってしまうので注意してください。
 
-|TPE|NSGA-II|CMA-ES|ランダム|QMC|
-|---|---|---|---|---|
-|<img width="220" alt="Screenshot 2024-02-25 at 15 01 09" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/902375ec-73d8-4349-863b-cd162eb2d6e0">|<img width="220" alt="Screenshot 2024-02-25 at 15 00 21" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/5ee15980-9590-494f-8f71-920ecea33f4f">|<img width="220" alt="Screenshot 2024-02-25 at 14 59 25" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/9ec4f50f-4f19-40af-95d2-632f908a5adb">|<img width="220" alt="Screenshot 2024-02-25 at 14 58 04" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/e6324a2c-e5d0-406f-8e1e-7404e0f2afed">|<img width="220" alt="Screenshot 2024-02-25 at 14 57 06" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/fd7b8e93-a255-4027-bfc2-ae413ac687a0">|
-|<img width="220" alt="Screenshot 2024-02-25 at 15 01 57" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/66a8f3ee-c8b2-459a-bf0e-48bae18033d7">|<img width="220" alt="Screenshot 2024-02-25 at 15 02 27" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/d84088b7-712a-4228-a494-de5d2233ffec">|<img width="220" alt="Screenshot 2024-02-25 at 15 02 58" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/0b3cd83e-c959-45cf-b730-f1462ef9105c">|<img width="220" alt="Screenshot 2024-02-25 at 15 03 41" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/9c92234a-90e1-4341-a8e5-7e435def043d">|<img width="220" alt="Screenshot 2024-02-25 at 15 04 12" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/5aa2ada9-7794-427c-a865-602b41fc6500">|
-|x1:0.51, x2:0.49|x1:0.77, x2:0.23|x1:0.77, x2:0.23|x1:0.67, x2:0.33|x1:0.71, x2:0.29|
+| TPE                                                                                                                                                                              | NSGA-II                                                                                                                                                                          | CMA-ES                                                                                                                                                                           | ランダム                                                                                                                                                                         | QMC                                                                                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img width="220" alt="Screenshot 2024-02-25 at 15 01 09" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/902375ec-73d8-4349-863b-cd162eb2d6e0"> | <img width="220" alt="Screenshot 2024-02-25 at 15 00 21" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/5ee15980-9590-494f-8f71-920ecea33f4f"> | <img width="220" alt="Screenshot 2024-02-25 at 14 59 25" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/9ec4f50f-4f19-40af-95d2-632f908a5adb"> | <img width="220" alt="Screenshot 2024-02-25 at 14 58 04" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/e6324a2c-e5d0-406f-8e1e-7404e0f2afed"> | <img width="220" alt="Screenshot 2024-02-25 at 14 57 06" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/fd7b8e93-a255-4027-bfc2-ae413ac687a0"> |
+| <img width="220" alt="Screenshot 2024-02-25 at 15 01 57" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/66a8f3ee-c8b2-459a-bf0e-48bae18033d7"> | <img width="220" alt="Screenshot 2024-02-25 at 15 02 27" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/d84088b7-712a-4228-a494-de5d2233ffec"> | <img width="220" alt="Screenshot 2024-02-25 at 15 02 58" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/0b3cd83e-c959-45cf-b730-f1462ef9105c"> | <img width="220" alt="Screenshot 2024-02-25 at 15 03 41" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/9c92234a-90e1-4341-a8e5-7e435def043d"> | <img width="220" alt="Screenshot 2024-02-25 at 15 04 12" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/5aa2ada9-7794-427c-a865-602b41fc6500"> |
+| x1:0.51, x2:0.49                                                                                                                                                                 | x1:0.77, x2:0.23                                                                                                                                                                 | x1:0.77, x2:0.23                                                                                                                                                                 | x1:0.67, x2:0.33                                                                                                                                                                 | x1:0.71, x2:0.29                                                                                                                                                                 |
 
-正解の値は以下になります。
-|重要度|
-|---|
-|<img width="300" alt="Screenshot 2024-02-25 at 15 14 22" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/f84f1b61-e257-4ce8-ba4c-16d0ebcfc751">|
-|x1:0.6, x2:0.4|
+なお正解の値は以下になります。
+きれいにサンプリングしても、十分に一様なサンプリングをしないと正解をえられないのでその点についても注意してください。
+
+| 重要度                                                                                                                                                                           |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img width="300" alt="Screenshot 2024-02-25 at 15 14 22" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/f84f1b61-e257-4ce8-ba4c-16d0ebcfc751"> |
+| x1:0.6, x2:0.4                                                                                                                                                                   |
 
 #### aaa
 
