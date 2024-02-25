@@ -94,6 +94,17 @@ Tunny で採用しているのは以下の手法です。
 比較の対象として、Rosenbrock function という関数に置いて、どの様に収束していくのか比較してみます。
 以下のような条件で探索します。
 
+<img width="600" alt="Screenshot 2024-02-25 at 20 34 27" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/485d019b-e204-49de-967b-df5995919ebc">
+
+[最適化アルゴリズムを評価するベンチマーク関数まとめ](https://qiita.com/tomitomi3/items/d4318bf7afbc1c835dda#rosenbrock-function)
+
+複数のケースを確認します。
+
+1. 変数：3、試行回数：126
+2. 変数：3、試行回数：1024
+3. 変数：10、試行回数：126
+4. 変数：10、試行回数：1024
+
 ### 制約条件の対応
 
 Tunny は明示的に制約条件に対応しています。
