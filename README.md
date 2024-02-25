@@ -115,9 +115,9 @@ Rosenbrock function はただの式なので計算は一瞬です。
 | 試行回数 128  | ![3_variables_128_trials](https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/28b0fd02-e0a4-46d7-86e0-96183f11a926)          | ![10_variables_128_trials](https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/5d076dd4-311b-4d74-bf7a-40c9ce76bc03)         |
 | 最小値        | <img width="362" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/4215c0d2-8493-4968-853c-b54de73980e6"> | <img width="362" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/11bda4e1-85a5-4c9b-86bc-70fdbe0032b5"> |
 | 計算時間      | <img width="361" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/bcab8b97-2e97-4872-b109-b25addecf429"> | <img width="361" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/d296953a-ca63-41d4-9a99-51e9bd5b7a29"> |
-| 試行回数 1024 | ![3_variables_1024_trials](https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/a2e5c61e-f977-4e82-becf-d35a9e50dc31)         |![10_variables_1024_trials](https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/19d68499-d1d3-452a-8010-8360415195c0)|
-| 最小値        | <img width="362" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/f05bb1cb-09c6-4cfc-8587-18a52278c85e"> |<img width="368" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/0c5bf81e-2026-4089-88b7-0507727e532c">|
-| 計算時間      | <img width="361" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/8d790e7d-7c52-4ecf-9cef-0dfb6a7d4965"> |<img width="361" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/d6cccee1-5317-4c39-a6cc-4c5eefb637c3">|
+| 試行回数 1024 | ![3_variables_1024_trials](https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/a2e5c61e-f977-4e82-becf-d35a9e50dc31)         | ![10_variables_1024_trials](https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/19d68499-d1d3-452a-8010-8360415195c0)        |
+| 最小値        | <img width="362" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/f05bb1cb-09c6-4cfc-8587-18a52278c85e"> | <img width="368" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/0c5bf81e-2026-4089-88b7-0507727e532c"> |
+| 計算時間      | <img width="361" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/8d790e7d-7c52-4ecf-9cef-0dfb6a7d4965"> | <img width="361" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/d6cccee1-5317-4c39-a6cc-4c5eefb637c3"> |
 
 結果を見るとどのケースでも GP が優秀ですが、最適化にかかる時間が最もかかっています。
 同じベイズ最適化でも TPE はあまり計算時間がかからず良い結果が得られています。
@@ -332,7 +332,6 @@ Dashboard はプロットされた点をダブルクリックするとその点�
 | x1:0.6, x2:0.4                                                                                                                                                                   |
 
 #### aaa
-
 
 ### Human-in-the-loop
 
