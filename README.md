@@ -218,12 +218,15 @@ Dashboard はプロットされた点をダブルクリックするとその点�
 #### 感度を確認するときの注意点
 
 以下は同じ試行回数を行った場合の、コンター図です。
-最適値周り以外の点が少なくうまくコンターが作成できていないことがわかります。
-
-|||||
+前半3つは最適値周りはよくサンプリングされていますが、それ以外の点が少なくうまくコンターが作成できていないことがわかります。
+後半の2つは最適化の手法ではなく全体を確認するための手法のため、きれいなコンターが描けています。
 
 感度を可視化するツールはきれいに点が取れていることが前提になります。
 最適化を行ってしまうと、最適値付近の情報しかえられないので注意してください。
+
+|ベイズ最適化|GA|CMA-ES|ランダム|QMC|
+|---|---|---|---|---|
+|<img width="220" alt="Screenshot 2024-02-25 at 14 43 33" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/12191aa7-0e3e-4320-99f9-7912e8a898a2">|<img width="220" alt="Screenshot 2024-02-25 at 14 43 56" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/05030f89-ea4f-41c6-bd03-0ff416382162">|<img width="220" alt="Screenshot 2024-02-25 at 14 44 26" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/86c6f103-a63b-49ed-a056-f0b4a1c4d418">|<img width="220" alt="Screenshot 2024-02-25 at 14 44 49" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/5bcbd0d5-f6e7-43b7-9474-e8e4c7e64cc3">|<img width="220" alt="Screenshot 2024-02-25 at 14 45 22" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/81cad646-2dec-4bb1-940c-ec7686e518f8">
 
 #### aaa
 
