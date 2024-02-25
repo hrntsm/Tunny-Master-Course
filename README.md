@@ -110,14 +110,58 @@ Rosenbrock function はただの式なので計算は一瞬です。
 ほぼ最適化計算にかかっている時間だと考えてください。
 なお SMBO に該当する TPE と GP は代理モデルの作成のため、試行回数の半分だけランダムサンプリングを行っています。
 
-|               | 変数 3 | 変数 10 |
-| ------------- | ------ | ------- |
-| 試行回数 128  |![3_variables_128_trials](https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/28b0fd02-e0a4-46d7-86e0-96183f11a926)|![10_variables_128_trials](https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/5d076dd4-311b-4d74-bf7a-40c9ce76bc03)|
-| 最小値        |<img width="362" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/4215c0d2-8493-4968-853c-b54de73980e6">|<img width="362" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/11bda4e1-85a5-4c9b-86bc-70fdbe0032b5">|
-| 計算時間      |<img width="361" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/bcab8b97-2e97-4872-b109-b25addecf429">|<img width="361" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/d296953a-ca63-41d4-9a99-51e9bd5b7a29">|
-| 試行回数 1024 |![3_variables_1024_trials](https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/a2e5c61e-f977-4e82-becf-d35a9e50dc31)|         |
-| 最小値        |<img width="362" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/f05bb1cb-09c6-4cfc-8587-18a52278c85e">|         |
-| 計算時間      |<img width="361" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/8d790e7d-7c52-4ecf-9cef-0dfb6a7d4965">|         |
+|               | 変数 3                                                                                                                                               | 変数 10                                                                                                                                              |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 試行回数 128  | ![3_variables_128_trials](https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/28b0fd02-e0a4-46d7-86e0-96183f11a926)          | ![10_variables_128_trials](https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/5d076dd4-311b-4d74-bf7a-40c9ce76bc03)         |
+| 最小値        | <img width="362" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/4215c0d2-8493-4968-853c-b54de73980e6"> | <img width="362" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/11bda4e1-85a5-4c9b-86bc-70fdbe0032b5"> |
+| 計算時間      | <img width="361" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/bcab8b97-2e97-4872-b109-b25addecf429"> | <img width="361" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/d296953a-ca63-41d4-9a99-51e9bd5b7a29"> |
+| 試行回数 1024 | ![3_variables_1024_trials](https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/a2e5c61e-f977-4e82-becf-d35a9e50dc31)         |                                                                                                                                                      |
+| 最小値        | <img width="362" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/f05bb1cb-09c6-4cfc-8587-18a52278c85e"> |                                                                                                                                                      |
+| 計算時間      | <img width="361" alt="image" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/8d790e7d-7c52-4ecf-9cef-0dfb6a7d4965"> |                                                                                                                                                      |
+
+結果を見るとどのケースでも GP が優秀ですが、最適化にかかる時間が最もかかっています。
+同じベイズ最適化でも TPE はあまり計算時間がかからず良い結果が得られています。
+少ない試行回数では NSGA-II はあまり良い結果を得ることができないこともここからわかります。
+
+この例では、目的関数を計算する時間がほぼ 0 なのでかかる最適化処理にかかる**時間**という観点では、GP はあまり優秀でないように見えるかもしれません。
+ですが、目的関数の計算に数分以上かかる場合は、少ない計算回数で良い結果が得られる GP がかなり有効な手法になります。
+
+一方で試行回数が多い場合は、TPE と NSGA-II は同程度の結果が得られています。
+また CMA-ES は明確に良い結果が得られています。
+
+この結果を見ると CMA-ES も最適化において有効な手法だと考えられますが、単一目的の制約条件がない場合しか使えないため、若干使いづらいところがあります。
+
+※ これはあくまで一例です。
+最適化の設定などによって多少変化することもありますが、一般的にこのような傾向があると考えてください。
+
+#### 最適化手法について
+
+Optuna の公式サイトでは、一般に以下の回数がそれぞれの手法が優位になる試行回数だとされています。
+他の情報と合わせて[公式のドキュメント](https://optuna.readthedocs.io/en/stable/reference/samplers/index.html)から抜粋しています。
+
+| 手法         | GP     | TPE       | NSGA-II    | CMA-ES       |
+| ------------ | ------ | --------- | ---------- | ------------ |
+| 試行回数     | 10-100 | 100-1,000 | 100-10,000 | 1,000-10,000 |
+| 多目的最適化 | ◯      | ◯         | ◯          | ✗            |
+| 制約条件     | ◯      | ◯         | ◯          | ✗            |
+
+Tunnyの最適化では、入力が以下のように試行回数(Number of trials)しかありません。
+よくなぜ"世代(generation)"の入力や"世代に含まれる個体数(population)"の設定がないのかという質問をもらいます。
+回答としては、これらの概念があるのは進化アルゴリズムに分類される手法に限るからです。
+ベイズ最適化、ランダム、QMCには世代や世代の個体数という概念がありません。
+そのため入力としては"試行回数"のみになっています。
+
+ではNSGAで世代数はどうのように設定するとかというと、Settingsのタブから設定できます。
+Population Size が世代に含まれる個体数になります。
+つまり Number of Trials / Population Size が世代数になります。
+
+|試行回数の設定|個体数の設定|
+|---|---
+|||
+
+より各手法について知りたい場合は、optunaの本を読まれることを推奨します。
+
+- [Optuna によるブラックボックス最適化(再掲)](https://www.ohmsha.co.jp/book/9784274230103/)
 
 ### 制約条件の対応
 
