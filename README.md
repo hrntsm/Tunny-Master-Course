@@ -224,10 +224,17 @@ Dashboard はプロットされた点をダブルクリックするとその点�
 感度を可視化するツールはきれいに点が取れていることが前提になります。
 最適化を行ってしまうと、最適値付近の情報しかえられないので注意してください。
 
-|ベイズ最適化|GA|CMA-ES|ランダム|QMC|
+|TPE|NSGA-II|CMA-ES|ランダム|QMC|
 |---|---|---|---|---|
 |<img width="220" alt="Screenshot 2024-02-25 at 15 01 09" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/902375ec-73d8-4349-863b-cd162eb2d6e0">|<img width="220" alt="Screenshot 2024-02-25 at 15 00 21" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/5ee15980-9590-494f-8f71-920ecea33f4f">|<img width="220" alt="Screenshot 2024-02-25 at 14 59 25" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/9ec4f50f-4f19-40af-95d2-632f908a5adb">|<img width="220" alt="Screenshot 2024-02-25 at 14 58 04" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/e6324a2c-e5d0-406f-8e1e-7404e0f2afed">|<img width="220" alt="Screenshot 2024-02-25 at 14 57 06" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/fd7b8e93-a255-4027-bfc2-ae413ac687a0">|
 |<img width="220" alt="Screenshot 2024-02-25 at 15 01 57" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/66a8f3ee-c8b2-459a-bf0e-48bae18033d7">|<img width="220" alt="Screenshot 2024-02-25 at 15 02 27" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/d84088b7-712a-4228-a494-de5d2233ffec">|<img width="220" alt="Screenshot 2024-02-25 at 15 02 58" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/0b3cd83e-c959-45cf-b730-f1462ef9105c">|<img width="220" alt="Screenshot 2024-02-25 at 15 03 41" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/9c92234a-90e1-4341-a8e5-7e435def043d">|<img width="220" alt="Screenshot 2024-02-25 at 15 04 12" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/5aa2ada9-7794-427c-a865-602b41fc6500">|
+|x1:0.51, x2:0.49|x1:0.77, x2:0.23|x1:0.77, x2:0.23|x1:0.67, x2:0.33|x1:0.71, x2:0.29|
+
+正解の値は以下になります。
+|重要度|
+|---|
+|<img width="300" alt="Screenshot 2024-02-25 at 15 14 22" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/f84f1b61-e257-4ce8-ba4c-16d0ebcfc751">|
+|x1:0.6, x2:0.4|
 
 #### aaa
 
