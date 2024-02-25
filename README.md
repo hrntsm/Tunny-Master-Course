@@ -186,7 +186,7 @@ Constraint Fish Attribute コンポーネントの 「Constraint」の入力に�
 リストでの入力に対応しています。
 ここに入力されている値の全てが 0 以下の場合、その試行は制約条件を満たす試行だと判断されます。
 
-<img width="672" alt="Screenshot 2024-02-24 at 15 43 02" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/2792c746-5ed2-4915-a236-1be8505dcbf2">
+<img width="600" alt="Screenshot 2024-02-24 at 15 43 02" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/2792c746-5ed2-4915-a236-1be8505dcbf2">
 
 サンプルファイルは以下です。
 
@@ -200,6 +200,12 @@ Constraint Fish Attribute コンポーネントの 「Constraint」の入力に�
 Tunny では Fish Egg という機能を使うことでそれを実現できます。
 与えたい変数の組み合わせにした状態で lay(卵を産む)を true にするとその値の組み合わせが記録されます。
 複数の組み合わせを初期解として登録することができます。
+
+<img width="600" alt="Screenshot 2024-02-25 at 23 02 26" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/ee66f488-3974-46ea-be5d-0c25d127819b">
+
+サンプルファイルは以下です。
+
+- Optimization_with_initial_values.gh
 
 ### 最適化の永続化
 
