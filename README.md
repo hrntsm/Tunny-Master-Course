@@ -507,10 +507,11 @@ images[0].save(
 )
 ```
 
-必要なライブラリをインストールして gif 化を実行するために以下をターミナルで実行してください。
+必要なライブラリをインストールして gif 化を実行するために,.tunny_env/pythonの階層で、以下をターミナルで実行してください。
+
 
 ```
-./python.exe -m pip install
+./python.exe -m pip install Pillow
 ./python.exe create_gif_animation.py
 ```
 
@@ -519,3 +520,5 @@ images[0].save(
 - create_gif_animation.py
 
 作成されたカーブの長さが最小化されていく動画です。
+
+![fish](https://github.com/hrntsm/Tunny-Master-Course/assets/23289252/d3fc2bc9-a42e-4c30-b08c-8784d8c00cf3)
