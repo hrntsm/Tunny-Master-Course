@@ -423,7 +423,7 @@ Tunny の Human-in-the-loop 機能を使うことであなたの好みを学習�
 これまでの最適化ツールでは、"最適値"のみを探索するのでこういった機械学習の学習データを作成することができませんでした。
 
 Tunny はランダムや QMC などの一様にサンプリングするツールを持っているため、こういった用途にも使うことができます。
-LunchbocML と Tunny を組み合わせることで、Grasshopper単独でこの処理を行うことができます。
+LunchbocML と Tunny を組み合わせることで、Grasshopper 単独でこの処理を行うことができます。
 機械学習の手法には LightGBM という手法を使用します。
 
 <img width="450" alt="Screenshot 2024-02-26 at 17 34 26" src="https://github.com/hrntsm/Tunny-Master-Course/assets/23289252/1bbe5779-0f86-4117-a50a-1b68903fd905">
@@ -468,12 +468,15 @@ storage_path = "STORAGE_PATH"
 artifact_dir_path = "ARTIFACT_DIR_PATH"
 gif_path = "GIF_PATH"
 
+# 対象のTunnyのStudyNameを入れてください
+study_name = "STUDY_NAME"
+
 # Tunnyの最適化の結果ファイルを読み込みます
 lock_obj = optuna.storages.JournalFileOpenLock(storage_path)
 storage = optuna.storages.JournalStorage(
     optuna.storages.JournalFileStorage(storage_path, lock_obj=lock_obj),
 )
-study = optuna.study.load_study(study_name="gif_test", storage=storage)
+study = optuna.study.load_study(study_name=study_name, storage=storage)
 sys_attr_list = [trial.system_attrs for trial in study.trials]
 
 # もし最適化結果のヒストリーの図を確認したい場合は、以下のコメントアウトを解除してください
@@ -500,7 +503,15 @@ images[0].save(
     ],  # すべての画像ではなく、5つおきに動画化したい場合は 1::5 としてください
     optimize=False,
     duration=40,
+    loop=0,
 )
+```
+
+必要なライブラリをインストールして gif 化を実行するために以下をターミナルで実行してください。
+
+```
+./python.exe -m pip install
+./python.exe create_gif_animation.py
 ```
 
 この Python ファイルは以下にあります。

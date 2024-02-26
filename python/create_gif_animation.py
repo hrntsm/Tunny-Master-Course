@@ -16,12 +16,14 @@ storage_path = "STORAGE_PATH"
 artifact_dir_path = "ARTIFACT_DIR_PATH"
 gif_path = "GIF_PATH"
 
+study_name = "STUDY_NAME"
+
 # load the study and get the system attributes
 lock_obj = optuna.storages.JournalFileOpenLock(storage_path)
 storage = optuna.storages.JournalStorage(
     optuna.storages.JournalFileStorage(storage_path, lock_obj=lock_obj),
 )
-study = optuna.study.load_study(study_name="gif_test", storage=storage)
+study = optuna.study.load_study(study_name=study_name, storage=storage)
 sys_attr_list = [trial.system_attrs for trial in study.trials]
 
 # if you need to see the optimization history
@@ -48,4 +50,5 @@ images[0].save(
     ],  # If you want to create a gif with 2 skips, you can set index like images[1::2]
     optimize=False,
     duration=40,
+    loop=0,
 )
