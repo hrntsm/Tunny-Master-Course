@@ -16,6 +16,10 @@
   - Karamba3d
   - VS Code（または任意の Python コードの編集環境）
 
+## 簡単なデモ
+
+簡単なデモを行います。
+
 ## 開発経緯
 
 なぜいまさら日本で新しい最適化の Grasshopper コンポーネントを作成するのでしょうか。
@@ -150,12 +154,14 @@ Rosenbrock function はただの式なので計算は一瞬です。
 一方で NSGA-II は確実に結果が改善しながらも比較的ばらつきながら探索しています。
 このことから、変数が多い場合や多峰性が強いと想定される場合は、NSGA-II を選択したほうが、広い範囲から探索してくれる場合があります。
 
+これらの結果ファイルは compare のフォルダに入っています。
+
 ※ これはあくまで一例です。
 最適化の設定などによって多少変化することもありますが、一般的にこのような傾向があると考えてください。
 
 #### 最適化手法について
 
-Optuna の公式サイトでは、一般に以下の回数がそれぞれの手法が優位になる試行回数だとされています。
+Optuna の公式サイトでは、一般に以下の回数がそれぞれの手法で推奨される試行回数だとされています。
 他の情報と合わせて[公式のドキュメント](https://optuna.readthedocs.io/en/stable/reference/samplers/index.html)から抜粋しています。
 
 | 手法         | GP     | TPE       | NSGA-II    | CMA-ES       |
@@ -369,7 +375,22 @@ Dashboard はプロットされた点をダブルクリックするとその点�
 | <img width="300" alt="Screenshot 2024-02-25 at 15 14 22" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/f84f1b61-e257-4ce8-ba4c-16d0ebcfc751"> |
 | x1:0.6, x2:0.4                                                                                                                                                                   |
 
+この例は以下のファイルになります。
+
+- compare_contour.gh
+
 ### Human-in-the-loop
+
+この機能は一人で扱っていてもあまり技術的に面白い程度に留まってしまいます。
+面白いのは複数の人間に対して行った場合です。
+例えば設計対象地域でワークショップなどを行い、本機能を使用することで
+「この地域の人が好きな形」のようなものを数値化することができます。
+この様に複数人（群衆）に対して好みを確認することを「Crowd in the loop」といったりもします。
+
+デモで示した手法は Preferential Bayesian Optimization（選好ベイズ最適化）と呼ばれる手法になります。
+例えば以下のスライドなどを読むとより理解が深まると思われます。
+
+- [2023-07-25 好みを学習して支援するデザイン支援システム（産総研 AI セミナー）](https://speakerdeck.com/yuki_koyama/aist-ai-seminar-preferential-bayesian-optimization?slide=64)
 
 ## より高度な使用法
 
