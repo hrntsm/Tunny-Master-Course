@@ -417,7 +417,7 @@ Tunny の Human-in-the-loop 機能を使うことであなたの好みを学習�
 
 以下のような 1 スパン × 5 スパン 11 階建てのビルの部材断面どうしますか？
 
-<img width="374" alt="Screenshot 2024-02-26 at 17 28 14" src="https://github.com/hrntsm/Tunny-Master-Course/assets/23289252/b8690e39-837a-4e0f-8ced-77f06560c417">
+<img width="200" alt="Screenshot 2024-02-26 at 17 28 14" src="https://github.com/hrntsm/Tunny-Master-Course/assets/23289252/b8690e39-837a-4e0f-8ced-77f06560c417">
 
 部材断面と層間変形角の関係を機械学習で学習し、断面を予測するモデルを作成してみます。
 これまでの最適化ツールでは、"最適値"のみを探索するのでこういった機械学習の学習データを作成することができませんでした。
