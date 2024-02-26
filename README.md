@@ -503,12 +503,11 @@ images[0].save(
     ],  # すべての画像ではなく、5つおきに動画化したい場合は 1::5 としてください
     optimize=False,
     duration=40,
-    loop=0,
+    loop=0, # GIFをループさせたいときは 0 にする。
 )
 ```
 
-必要なライブラリをインストールして gif 化を実行するために,.tunny_env/pythonの階層で、以下をターミナルで実行してください。
-
+必要なライブラリをインストールして gif 化を実行するために, .tunny_env/python の階層で、以下をターミナルで実行してください。
 
 ```
 ./python.exe -m pip install Pillow
@@ -522,3 +521,9 @@ images[0].save(
 作成されたカーブの長さが最小化されていく動画です。
 
 ![fish](https://github.com/hrntsm/Tunny-Master-Course/assets/23289252/d3fc2bc9-a42e-4c30-b08c-8784d8c00cf3)
+
+## まとめ
+
+Tunny の使用方法について紹介しました。
+最適化はただのツールです。
+より良い設計に役に立つと思うならば是非積極的に使ってみてください。
