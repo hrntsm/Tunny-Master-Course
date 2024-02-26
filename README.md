@@ -388,16 +388,20 @@ Dashboard はプロットされた点をダブルクリックするとその点�
 
 Tunny の Human-in-the-loop 機能を使うことであなたの好みを学習させることができます。
 以下のような選択画面が現れ、最も好きではないもの（WORST）なものを選択してください。
+徐々に形状が収束していきます。
+
+<img width="600" alt="Screenshot 2024-02-26 at 17 24 03" src="https://github.com/hrntsm/Tunny-Master-Course/assets/23289252/96e23501-bda1-4880-b765-65fc7383751b">
 
 こちらは以下のサンプルファイルになります。
 
 - Facade_Human-in-the-loop.gh
 
-この機能は一人で扱っていても技術的に面白い程度に留まってしまいます。
-面白いのは複数の人間に対して行った場合です。
+この機能は一人で扱っていても技術的に面白い程度にだと思います。
+
+複数の人間に対して行った場合に面白い使い方ができます。
 例えば設計対象地域でワークショップなどを行い、本機能を使用することで
 「この地域の人が好きな形」のようなものを数値化することができます。
-この様に複数人（群衆）に対して好みを確認することを「Crowd in the loop」といったりもします。
+この様に複数人（群衆）の好みを最適化することを「Crowd in the loop」といったりもします。
 
 デモで示した手法は Preferential Bayesian Optimization（選好ベイズ最適化）と呼ばれる手法になります。
 例えば以下のスライドなどを読むとより理解が深まると思われます。
@@ -410,6 +414,24 @@ Tunny の Human-in-the-loop 機能を使うことであなたの好みを学習�
 
 この例では Karamba3d と LunchboxML を使用します。
 ただし、Karamba3d はライセンスが必要なので、Karamba3D がなくても機械学習の部分は動作するようにしています。
+
+以下のような 1 スパン × 5 スパン 11 階建てのビルの部材断面どうしますか？
+
+<img width="374" alt="Screenshot 2024-02-26 at 17 28 14" src="https://github.com/hrntsm/Tunny-Master-Course/assets/23289252/b8690e39-837a-4e0f-8ced-77f06560c417">
+
+部材断面と層間変形角の関係を機械学習で学習し、断面を予測するモデルを作成してみます。
+これまでの最適化ツールでは、"最適値"のみを探索するのでこういった機械学習の学習データを作成することができませんでした。
+
+Tunny はランダムや QMC などの一様にサンプリングするツールを持っているため、こういった用途にも使うことができます。
+LunchbocML と Tunny を組み合わせることで、Grasshopper単独でこの処理を行うことができます。
+機械学習の手法には LightGBM という手法を使用します。
+
+<img width="450" alt="Screenshot 2024-02-26 at 17 34 26" src="https://github.com/hrntsm/Tunny-Master-Course/assets/23289252/1bbe5779-0f86-4117-a50a-1b68903fd905">
+
+以下が機械学習で断面と層間変形角を学習した結果です。
+概ね ±10% 程度の精度で予測できていました。
+
+<img width="1000" alt="Screenshot 2024-02-26 at 17 36 17" src="https://github.com/hrntsm/Tunny-Master-Course/assets/23289252/1b0eac8b-a764-427d-9709-5350230c6102">
 
 ### 変化するモデル形状の GIF 化
 
