@@ -387,6 +387,7 @@ Dashboard はプロットされた点をダブルクリックするとその点�
 <img width="600" alt="Screenshot 2024-02-26 at 16 40 54" src="https://github.com/hrntsm/Tunny-Master-Course/assets/23289252/777e469d-d21f-4385-a88d-6fd0b44741bc">
 
 Tunny の Human-in-the-loop 機能を使うことであなたの好みを学習させることができます。
+以下のような選択画面が現れ、最も好きではないもの（WORST）なものを選択してください。
 
 こちらは以下のサンプルファイルになります。
 
@@ -407,4 +408,81 @@ Tunny の Human-in-the-loop 機能を使うことであなたの好みを学習�
 
 ### 機械学習との連携
 
+この例では Karamba3d と LunchboxML を使用します。
+ただし、Karamba3d はライセンスが必要なので、Karamba3D がなくても機械学習の部分は動作するようにしています。
+
 ### 変化するモデル形状の GIF 化
+
+ここでは Python を使います。
+Python そのものをインストールしている必要はありませんが、Python コードを編集するので、テキストエディタが必要になります。
+ここでは VSCode を使用します。
+
+Tunny の機能で最適化のヒストリーを作成することができます。
+そのため数字としての最適化の状態を確認することは簡単にできます。
+
+建築での最適化を考えると形に対して最適化する場合が多いと思います。
+なので、最適化途中で作成された形状の変化がどうなるかも合わせて知りたい場合が多いのではないでしょうか。
+
+Tunny の機能として、Rhino のビューポートの状態を画像として保存することができます。
+その画像をつなぎ合わせ GIF 動画とすることで最適化での形状の変化を可視化することができます。
+
+これは Tunny の最適化の多くの部分に Python で作られている Optuna を用いており、高い互換性があるためできることです。
+
+まず以下のサンプルファイルを実行して最適化結果の画像を作成します。
+デモ用なので早く最適化が終わるように単純なカーブの長さ最小化問題としています。
+
+- create_gif_animation.gh
+
+GIF を作成するために実行する Python コードは以下です。
+
+```py
+import json
+import os
+from PIL import Image
+import optuna
+
+# 以下にそれぞれパスを入れてください
+storage_path = "STORAGE_PATH"
+artifact_dir_path = "ARTIFACT_DIR_PATH"
+gif_path = "GIF_PATH"
+
+# Tunnyの最適化の結果ファイルを読み込みます
+lock_obj = optuna.storages.JournalFileOpenLock(storage_path)
+storage = optuna.storages.JournalStorage(
+    optuna.storages.JournalFileStorage(storage_path, lock_obj=lock_obj),
+)
+study = optuna.study.load_study(study_name="gif_test", storage=storage)
+sys_attr_list = [trial.system_attrs for trial in study.trials]
+
+# もし最適化結果のヒストリーの図を確認したい場合は、以下のコメントアウトを解除してください
+# optuna.visualization.plot_optimization_history(study).show()
+
+# GIF アニメーションの作成
+images = []
+for attr in sys_attr_list:
+    for key in attr.keys():
+        if "artifact" in key:
+            artifact_json = json.loads(attr[key])
+            images.append(
+                Image.open(
+                    os.path.join(artifact_dir_path, artifact_json["artifact_id"])
+                )
+            )
+            break
+
+images[0].save(
+    gif_path,
+    save_all=True,
+    append_images=images[
+        1:
+    ],  # すべての画像ではなく、5つおきに動画化したい場合は 1::5 としてください
+    optimize=False,
+    duration=40,
+)
+```
+
+この Python ファイルは以下にあります。
+
+- create_gif_animation.py
+
+作成されたカーブの長さが最小化されていく動画です。
