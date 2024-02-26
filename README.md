@@ -352,6 +352,14 @@ Dashboard は Tunny の UI だけでなく Grasshopper のツールバーから�
 
 Dashboard はプロットされた点をダブルクリックするとその点の詳細に飛ぶことができます。
 
+この図化は以下のファイルを使った結果を可視化したものです。
+
+- optimization_with_constraint.gh
+
+参考に log ファイルも以下に上げています。
+
+- dashboard.log
+
 #### 感度を確認するときの注意点
 
 以下は同じ試行回数を行った場合の、コンター図です。
