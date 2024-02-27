@@ -10,7 +10,6 @@
   - Windows11
   - Rhino 8
   - Tunny 0.11.0
-    - このリポジトリにあるのものが対応しているバージョン
 - 任意
   - [LunchBoxML](https://www.food4rhino.com/en/app/lunchbox)
   - Karamba3d
