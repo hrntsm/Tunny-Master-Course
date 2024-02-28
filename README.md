@@ -352,6 +352,7 @@ Dashboard は Tunny の UI だけでなく Grasshopper のツールバーから�
 | <img width="500" alt="Screenshot 2024-02-25 at 14 34 06" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/8533b74e-8b94-427d-97f6-df568c0dd7f3"> | <img width="500" alt="Screenshot 2024-02-25 at 14 34 45" src="https://github.com/hrntsm/SHIMZ-AECTech_Tunny-Master-Course/assets/23289252/ce0edeb2-07d2-47ed-9ac8-dc1fe7e4b55b"> |
 
 Dashboard はプロットされた点をダブルクリックするとその点の詳細に飛ぶことができます。
+最適化のまとめのページの下部から最適化結果をcsvファイルでダウンロードすることもでき、Grasshopper以外でのデータハンドリングも便利です。
 
 この図化は以下のファイルを使った結果を可視化したものです。
 
